@@ -7,7 +7,7 @@ from orders.models import Order
 
 # Create the stripe instance
 stripe.api_key = settings.STRIPE_SECRET_KEY
-stripe.api_version = stripe.STRIPE_API_VERSION
+stripe.api_version = settings.STRIPE_API_VERSION
 
 
 def payment_process(request):
