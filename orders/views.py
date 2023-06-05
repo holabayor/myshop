@@ -26,8 +26,8 @@ def order_create(request):
             order_created.delay(order.id)
             # Set the order un the session
             request.session["order_id"] = order.id
-            # redirect for paymenr
-            return redirect(reverse("payment:reverse"))
+            # redirect for payment
+            return redirect(reverse("payment:process"))
     else:
         form = OrderCreateForm()
     return render(request, "orders/order/create.html", {"cart": cart, "form": form})
