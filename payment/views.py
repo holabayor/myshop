@@ -15,8 +15,8 @@ def payment_process(request):
     order = get_object_or_404(Order, id=order_id)
 
     if request.method == "POST":
-        success_url = request.build_absolute_url(reverse("payment:completed"))
-        cancel_url = request.build_absolute_url(reverse("payment:canceled"))
+        success_url = request.build_absolute_uri(reverse("payment:completed"))
+        cancel_url = request.build_absolute_uri(reverse("payment:canceled"))
         # stripe checkout session data
         session_data = {
             "mode": "payment",
