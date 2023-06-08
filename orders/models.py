@@ -36,7 +36,7 @@ class Order(models.Model):
         else:
             # Stripe path for real payments
             path = "/"
-        return f"https://dashboard.strip.com{path}payments/{self.stripe_id}"
+        return f"https://dashboard.stripe.com{path}payments/{self.stripe_id}"
 
 
 class OrderItem(models.Model):

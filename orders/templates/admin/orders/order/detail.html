@@ -7,7 +7,7 @@ Order {{ order.id }} {{ block.super }}
     <div>
         <a href"{% url 'admin:index' %}">Home</a> &rsaquo;
         <a href"{% url 'admin:orders_order_changelist' %}">Orders</a> &rsaquo;
-        <a href"{% url 'admin:orders_order_change' %}">Order {{ order.id }}</a> &rsaquo; Detail
+        <a href"{% url 'admin:orders_order_change' order.id %}">Order {{ order.id }}</a> &rsaquo; Detail
     </div>    
 {% endblock breadcrumbs %}
 
